@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FunPay Regent - бот для продавцов FunPay: автовыдача, поднятие лотов, аренда Dota 2</title>
+<meta name="description" content="Бот для FunPay на нашем сервере: автовыдача, автоподнятие лотов, ответы покупателям и аренда аккаунтов Dota 2. Устанавливать ничего не надо, компьютер можно выключать.">
+<meta property="og:title" content="FunPay Regent - бот для продавцов FunPay">
+<meta property="og:description" content="Автовыдача, поднятие лотов, ответы покупателям и аренда Dota 2. Работает 24/7 на нашем сервере.">
+<meta property="og:image" content="https://vadim556.github.io/funpay-regent/assets/panel.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo.png">
+<style>
+:root{--bg:#0b1020;--panel:#141b33;--line:#26304f;--text:#eef1f8;--soft:#a9b2c9;--gold:#f4c25a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:28px 0 8px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}
+.brand img{width:44px;height:44px;border-radius:12px}
+.hero{padding:44px 0 36px}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.12;margin:0 0 18px;letter-spacing:-.5px}
+h1 span{color:var(--gold)}
+.lead{font-size:20px;color:var(--soft);max-width:680px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--gold);color:#1a1405;font-weight:700;text-decoration:none;padding:14px 26px;border-radius:12px}
+.btn:hover{filter:brightness(1.06)}
+.btn.alt{background:none;color:var(--text);border:1px solid var(--line);margin-left:10px}
+section{padding:30px 0}
+h2{font-size:28px;margin:0 0 16px}
+ul{margin:0;padding-left:22px}
+li{margin:7px 0}
+.shot{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.note{color:var(--soft);font-size:15px;margin-top:10px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--soft)}
+.card .price{font-size:24px;font-weight:700;color:var(--gold)}
+ol{margin:0;padding-left:22px}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 40px;color:var(--soft);font-size:15px}
+footer a{color:var(--text)}
+@media(max-width:520px){.btn.alt{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand"><img src="assets/logo.png" alt="">FunPay Regent</div></header>
+
+<div class="hero">
+<h1>Бот для продавцов <span>FunPay</span></h1>
+<p class="lead">Выдает товар после оплаты, поднимает лоты и отвечает покупателям. Работает 24/7 на нашем сервере: устанавливать ничего не надо, компьютер можно выключать.</p>
+<a class="btn" href="https://t.me/FunPayBoti_Bot?start=ad-github">Открыть бота в Telegram</a>
+<a class="btn alt" href="https://t.me/FunPayBoti_Bot?start=ad-github-dota">Аренда Dota 2</a>
+</div>
+
+<section>
+<h2>Что умеет</h2>
+<ul>
+<li>Автовыдача сразу после оплаты, днем и ночью. Если купили несколько штук, выдаст все</li>
+<li>Поднимает лоты, как только FunPay дает поднять</li>
+<li>Товар кончился - лот выключается, появился - включается обратно</li>
+<li>Приветствие, ответы на команды и на отзывы твоими текстами</li>
+<li>Напоминает покупателю подтвердить заказ через 6 часов и через сутки, ночью не пишет</li>
+<li>Статистика продаж и возвратов, видно сколько денег на удержании и когда их можно вывести</li>
+<li>Уведомления о заказах и сообщениях, ответить покупателю можно прямо из Telegram</li>
+<li>Слетел golden_key - бот напишет, новый вставляешь кнопкой</li>
+<li>Переезд с FunPay Cardinal: загружаешь свои файлы автоответа и автовыдачи</li>
+</ul>
+</section>
+
+<section>
+<h2>Как выглядит панель</h2>
+<img class="shot" src="assets/panel.png" alt="Панель FunPay Regent: главный экран, аренда Dota 2 и уведомления в Telegram" loading="lazy">
+<p class="note">Цифры и ники на картинке для примера, кнопки и тексты как в боте.</p>
+</section>
+
+<section>
+<h2>Аренда аккаунтов Dota 2</h2>
+<p>Выставляешь аккаунты на FunPay, дальше бот ведет аренду без тебя:</p>
+<ul>
+<li>После оплаты отдает логин и пароль, код Steam Guard дает по команде и только пока идет аренда</li>
+<li>Посреди матча не кикает, ждет конца игры. Потом выкидывает со всех устройств и включает лот обратно</li>
+<li>После каждой аренды обновляет в лоте ММР, порядочность, вежливость, матчи, Dota Plus и жетоны</li>
+<li>Каждые 5 минут смотрит матчи. Покупатель вышел из игры - аренда закрывается, его кикает и кидает в ЧС</li>
+<li>Словил ЛП - лот становится "LP 3/5" и сдается дешевле, покупатели отмывают ЛП своими победами</li>
+<li>Цена растет на аккаунты, которые часто берут, и падает на те, что простаивают, максимум на 20%</li>
+<li>Покупатель смотрит свободные аккаунты со статами командой !ac прямо в чате</li>
+</ul>
+</section>
+
+<section>
+<h2>Цена</h2>
+<div class="cols">
+<div class="card"><h3>Бот</h3><p class="price">350 ₽ в месяц</p><p>Сервер, установка и обновления уже в цене.</p></div>
+<div class="card"><h3>Бот с арендой Dota 2</h3><p class="price">500 ₽ в месяц</p><p>Все то же плюс модуль аренды.</p></div>
+</div>
+<p class="note">Оплата прямо в боте: карта, СБП или крипта.</p>
+</section>
+
+<section>
+<h2>Как подключить</h2>
+<ol>
+<li>Заходишь в <a href="https://t.me/FunPayBoti_Bot?start=ad-github" style="color:var(--gold)">@FunPayBoti_Bot</a> и оплачиваешь</li>
+<li>Кидаешь golden_key от FunPay и токен своего бота из BotFather. Где их взять, бот покажет</li>
+<li>Мы поднимаем сервер, бот напишет, когда все готово</li>
+</ol>
+</section>
+
+<section>
+<h2>Вопросы</h2>
+<div class="cols">
+<div class="card"><h3>Зачем вам golden_key?</h3><p>Без него бот не сможет поднимать лоты и отвечать покупателям, он работает от твоего имени. Сообщение с ключом бот сразу удаляет, хранится ключ в зашифрованном виде.</p></div>
+<div class="card"><h3>Как все отключить, если что?</h3><p>Сменить пароль на FunPay, ключ перестанет работать.</p></div>
+<div class="card"><h3>Чем лучше бесплатного Cardinal?</h3><p>Ничего ставить не надо, компьютер и свой сервер не нужны. Обновления приходят сами, если FunPay что-то поменял, чиним мы. Плюс аренда Dota 2.</p></div>
+<div class="card"><h3>Можно перенести настройки из Cardinal?</h3><p>Да, файлы автоответа и автовыдачи загружаются кнопкой в панели.</p></div>
+</div>
+</section>
+
+<footer>
+<p>Бот: <a href="https://t.me/FunPayBoti_Bot?start=ad-github">@FunPayBoti_Bot</a>. Новости: <a href="https://t.me/FP_bots">@FP_bots</a>.</p>
+<p>FunPay Regent не является официальным продуктом FunPay.</p>
+</footer>
+</div>
+</body>
+</html>
